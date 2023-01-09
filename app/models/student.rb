@@ -4,4 +4,12 @@ class Student < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def self.available
+    self.all
+  end
+
+  def self.student_by_grade
+    self.all.order(grade: :desc)
+  end
+
 end
